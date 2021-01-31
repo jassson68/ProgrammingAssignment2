@@ -1,7 +1,7 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## cachesolve access this function 
 
 makeCacheMatrix <- function(x = matrix()) {
     p <- NULL
@@ -18,14 +18,14 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cachesolve function to compute matrix inverse
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   p <- x$getInverse()
   if(!is.null(p)) {
-    message("retrieving cached data")
-    return(p)
+    message("retrieving cached data") ## get cache data
+    return(p)  ## return matrix value
   }
   data_comp <- x$get()
   p <- solve(data_comp, ...)
@@ -33,7 +33,7 @@ cacheSolve <- function(x, ...) {
   p
 }
 
-A<-matrix(c(1,2,3,4),2,2)
+A<-matrix(c(1,2,3,4),2,2) ## matrix vector
 compute<-makeCacheMatrix(A)
 cacheSolve(compute)
 
